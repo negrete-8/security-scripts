@@ -1,16 +1,33 @@
-# proyectos-ciberseguridad
-"Ejercicios y prácticas sobre seguridad informática 
+# webscraping-contactos
 
-## Proyecto: Web Scraping para Contactos
-Este script permite extraer enlaces relacionados con "contacto" o "privacidad", correos electrónicos y números de teléfono desde una página web.
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)
+![Tool](https://img.shields.io/badge/Tool-BeautifulSoup-orange)
 
+Extracts contact information from a target website: emails, Spanish phone numbers and contact/privacy links.
 
-## Uso
-python webscraping_contactos.py -u "https://ejemplo.com"
+## Features
 
+- Discovers contact and privacy page links
+- Extracts email addresses via regex
+- Extracts Spanish phone numbers (`+34` format)
+- Saves results to `Reporte.txt`
 
-## Aviso Legal
-Este repositorio tiene fines **educativos y demostrativos**.  
-**No me hago responsable del uso indebido de los scripts aquí publicados.**  
-El uso de estas herramientas para actividades ilegales, sin consentimiento o que vulneren la privacidad de terceros está estrictamente prohibido.  
-Por favor, utilízalas únicamente en entornos controlados y con autorización.
+## Usage
+
+```bash
+python webs_scraping.py -u <URL>
+```
+
+## Example
+
+```bash
+python webs_scraping.py -u https://example.com
+```
+
+## Requirements
+
+```bash
+pip install requests beautifulsoup4
+```
+
+> For authorized use only.
