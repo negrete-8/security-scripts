@@ -1,28 +1,39 @@
-# proyectos-ciberseguridad
-"Ejercicios y prácticas sobre seguridad informática 
+# nmap-automation
 
-## Proyecto: Escaneo automatico para nmap
-Este script en Python permite automatizar un escaneo de puertos usando la herramienta nmap. Sus funciones principales son:
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)
+![Tool](https://img.shields.io/badge/Tool-Nmap-informational)
 
+Automates Nmap port scans using a target IP, a port list file and a configurable scan type.
 
-Recibe parámetros por consola:
+## Features
 
--t → IP del objetivo.
--l → Archivo con lista de puertos a analizar.
--s → Tipo de escaneo (T para TCP Connect, S para SYN Stealth, V para detección de versión).
+- TCP Connect scan (`-sT`)
+- SYN Stealth scan (`-sS`)
+- Version detection scan (`-sV`)
+- Port list loaded from external file
 
-Lee los puertos desde el archivo indicado..
-Ejecuta nmap con subprocess.run() y muestra la salida completa en pantalla
-Analiza la salida para detectar puertos abiertos y servicios inseguros como telnet o ftp.
-Genera un archivo alertas.txt si encuentra servicios inseguros, guardando las alertas.
+## Usage
 
+```bash
+python nmapauto.py -t <IP> -l puertos.txt -s <T|S|V>
+```
 
-## Uso ejemplo
-python escaneo.py -t (ip) -l puertos.txt -s S
-(sustituir (ip) por el objetivo ejemplo: 192.168.1.1
+| Flag | Description |
+|------|-------------|
+| `-t` | Target IP address |
+| `-l` | Path to port list file |
+| `-s` | Scan type: `T` (TCP), `S` (SYN), `V` (Version) |
 
-## Aviso Legal
-Este repositorio tiene fines **educativos y demostrativos**.  
-**No me hago responsable del uso indebido de los scripts aquí publicados.**  
-El uso de estas herramientas para actividades ilegales, sin consentimiento o que vulneren la privacidad de terceros está estrictamente prohibido.  
-Por favor, utilízalas únicamente en entornos controlados y con autorización.
+## Example
+
+```bash
+python nmapauto.py -t 192.168.1.1 -l puertos.txt -s S
+```
+
+## Requirements
+
+```
+nmap installed and in PATH
+```
+
+> For authorized use only.
