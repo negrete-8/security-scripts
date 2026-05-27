@@ -1,35 +1,39 @@
-## 🕷️ Web Spider – Ciberseguridad
+# webspider
 
-📌 Descripción
-Este script permite realizar un web scraping básico para extraer:
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)
+![Tool](https://img.shields.io/badge/Tool-Requests-blue)
 
-Enlaces relacionados con "contacto" o "privacidad".
-Correos electrónicos.
-Números de teléfono.
+Recursive web crawler that maps a domain up to a configurable depth, collecting URLs, emails and phone numbers. Outputs a structured JSON report.
 
-Es útil para tareas de reconocimiento en entornos controlados y con autorización.
+## Features
 
+- Crawls all internal links up to depth N
+- Extracts email addresses and Spanish phone numbers
+- Stays within the target domain (no external links)
+- JSON output report
 
-## Uso 
+## Usage
 
-python webspider.py -u "https://ejemplo.com" -o reporte.json -d 1
+```bash
+python webspider.py -u <URL> -d <depth> -o <output.json>
+```
 
-python webspider.py -u "https://ejemplo.com" -o reporte.json -d 2
+| Flag | Description | Default |
+|------|-------------|---------|
+| `-u` | Starting URL | required |
+| `-d` | Max crawl depth | `2` |
+| `-o` | Output JSON file | required |
 
-python webspider.py -u "https://ejemplo.com" -o reporte.json -d 3
+## Example
 
-(-d) ajuste de la profundidad
+```bash
+python webspider.py -u https://example.com -d 3 -o report.json
+```
 
-## 📂 Salida
-El script genera un archivo JSON con:
+## Requirements
 
-URLs visitadas.
-Correos encontrados.
-Teléfonos encontrados.
+```bash
+pip install requests beautifulsoup4
+```
 
-## ⚠️ Aviso Legal
-Este repositorio tiene fines educativos y demostrativos.
-
-No me hago responsable del uso indebido de los scripts aquí publicados.
-El uso de estas herramientas para actividades ilegales, sin consentimiento o que vulneren la privacidad de terceros está estrictamente prohibido.
-Por favor, utilízalas únicamente en entornos controlados y con autorización.
+> For authorized use only.
